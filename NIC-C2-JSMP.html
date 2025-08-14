@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Math Practice | Gabriel Bouteiller</title>
+</head>
+<body>
+    JS Math Practice | Gabriel Bouteiller
+    <hr>
+    <button onclick="buttonOne()">Button 1</button>
+    <hr>
+    <button onclick="buttonTwo()">Button 2</button>
+    <hr>
+    <button onclick="buttonThree()">Button 3</button>
+    <hr>
+    <button onclick="buttonFour()">Button 4</button>
+    <script>
+        function buttonOne(){
+            const TARGET1 = 100;
+            let inputBOne = parseInt(prompt('Choose a number: '));
+            if(inputBOne >= (TARGET1 - 20) && inputBOne <= (TARGET1 + 20) ){
+                console.log(inputBOne + ' is within 20 of the number ' + TARGET1 + '!');
+            }
+            else{
+                console.log(inputBOne + ' is not within 20 of the number ' + TARGET1 + '!');
+            }
+        }
+        function buttonTwo(){
+            let inputBTwo = parseInt(prompt('Please input a positive number: '));
+            let mThree = inputBTwo % 3;
+            let mSeven = inputBTwo % 7;
+            if(mThree == 0 && mSeven == 0){
+                console.log(inputBTwo + ' is a multiple of 3 and 7!');
+            }
+            else{
+                if(mThree == 0){
+                    console.log(inputBTwo + ' is a multiple of 3!');
+                }
+                if(mSeven == 0){
+                    console.log(inputBTwo + ' is a multiple of 7!');
+                }
+                if(mThree != 0 && mSeven != 0){
+                    console.log(inputBTwo + ' is not a muliple of 3 or 7!');
+                }
+            }
+        }
+        function buttonThree(){
+            let inputBThree1 = parseInt(prompt('Give a number: (1/3)'));
+            let inputBThree2 = parseInt(prompt('Give a number: (2/3)'));
+            let inputBThree3 = parseInt(prompt('Give a number: (3/3)'));
+            if(inputBThree1 > inputBThree2 && inputBThree1 > inputBThree3){
+                console.log(inputBThree1 + ' is the largest givin integer!');
+            }
+            if(inputBThree2 > inputBThree1 && inputBThree2 > inputBThree3){
+                console.log(inputBThree2 + ' is the largest givin integer!');
+            }
+            if(inputBThree3 > inputBThree1 && inputBThree3 > inputBThree2){
+                console.log(inputBThree3 + ' is the largest givin integer!');
+            }
+        }
+        function buttonFour(){
+            const TARGET2 = 100;
+            let inputBFour1 = parseInt(prompt('Give a number: (1/2)'));
+            let inputBFour2 = parseInt(prompt('Give a number: (2/2)'));
+            if((inputBFour1 >= TARGET2 && inputBFour2 > inputBFour1) || (inputBFour1 <= TARGET2 && inputBFour2 < inputBFour1)){
+            console.log(inputBFour1 + ' is closer than ' + inputBFour2 + ' to ' + TARGET2);
+                // alert('01');
+            }
+            if((inputBFour2 >= TARGET2 && inputBFour1 > inputBFour2) || (inputBFour2 <= TARGET2 && inputBFour1 < inputBFour2)){
+                console.log(inputBFour2 + ' is closer than ' + inputBFour1 + ' to ' + TARGET2);
+                // alert('02');
+            }
+            if(inputBFour1 === inputBFour2){
+                console.log(inputBFour1 + ' and ' + inputBFour2 + ' are equal distance from ' + TARGET2);
+                // alert('03');
+            }
+        }
+    </script>
+</body>
+</html>
