@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIC-C2-GG | Gabriel Bouteiller</title>
+</head>
+<body>
+    NIC-C2-GG | Gabriel Bouteiller
+    <hr>
+    <button onclick="guessGame()">Guessing Game</button>
+    <script>
+        function guessGame(){
+            let target = Math.floor(Math.random() * (100 - 1)) + 1;
+            console.log(target);
+            let counter = 1;
+            let user;
+            do{
+                user = parseInt(prompt('Type in a number to guess the target number (1-100): (type 0 to exit prompt)'));
+                if(user == 0){
+                    alert(target + ' was the target number!');
+                    break;
+                }
+                if(user == target && counter == 0){
+                    alert('Congrats, it took you only 1 time to guess ' + target + ' as the target number!');
+                    console.log(user + ' ' + counter + ' ' + target);
+                    break;
+                }
+                if(user == target && counter != 0){
+                    alert('Congratsm it took you ' + counter + ' times to guess ' + target + ' as the target number!');
+                    console.log(user + ' ' + counter + ' ' + target);
+                    break;
+                }
+                else{
+                    if(user < target){
+                        alert('You guessed less than the target number!');
+                        console.log(user + ' ' + counter + ' ' + target);
+                        counter++;
+                    }
+                    if(user > target){
+                        alert('You guessed more than the target number!');
+                        console.log(user + ' ' + counter + ' ' + target);
+                        counter++;
+                    }
+                }
+            }
+            while(user != target);
+        }
+    </script>
+</body>
+</html>
