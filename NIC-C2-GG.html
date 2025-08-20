@@ -21,16 +21,6 @@
                     alert(target + ' was the target number!');
                     break;
                 }
-                if(user == target && counter == 0){
-                    alert('Congrats, it took you only 1 time to guess ' + target + ' as the target number!');
-                    console.log(user + ' ' + counter + ' ' + target);
-                    break;
-                }
-                if(user == target && counter != 0){
-                    alert('Congratsm it took you ' + counter + ' times to guess ' + target + ' as the target number!');
-                    console.log(user + ' ' + counter + ' ' + target);
-                    break;
-                }
                 else{
                     if(user < target){
                         alert('You guessed less than the target number!');
@@ -42,6 +32,10 @@
                         console.log(user + ' ' + counter + ' ' + target);
                         counter++;
                     }
+                }
+                if(user == target && counter != 0){
+                    alert('Congrats it took you ' + counter + ' times to guess ' + target + ' as the target number!');
+                    console.log(user + ' ' + counter + ' ' + target);
                 }
             }
             while(user != target);
