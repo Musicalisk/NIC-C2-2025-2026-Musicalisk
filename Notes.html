@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes Page | 2025-2026 | NIC Coding 2</title>
+</head>
+<body>
+    gabriel bouteiller
+    <hr>
+    <button onclick="variablesAndUserInputs()">Variables and User Input</button>
+    <hr>
+    <button onclick="mathAndComparison()">Math and Comparison</button>
+    <hr>
+    <button onclick="loopsAndRandom()">Loops and Random</button>
+    <hr>
+    <button onclick="switchStatements()">Switch Statements</button>
+    <script>
+        function variablesAndUserInputs(){
+            let name = 'Boot';
+            // console.log(name);
+            // alert(name);
+
+            let grade = 90;
+            console.log('My name is ' + name + ' and I have a ' + grade);
+            
+            const EYE_COLOR = 'Brown';
+            console.log(EYE_COLOR);
+            // EYE_COLOR = 'Blue'; !Cannot change 'Const' values
+            
+            // User Input
+            let userName = prompt('What is your name?');
+            console.log(userName);
+
+            let numClasses = parseInt(prompt('How many classses do you have?'));
+            console.log(typeof(userName));
+            console.log(typeof(numClasses));
+        }
+        function mathAndComparison(){
+            // +, -, *, /, %
+            let x = 5;
+            let y = 10;
+            let answer = x + y;
+            
+            // Modulus - Does division and gives you the remainder
+            let even = x % 2 == 0;
+
+            // let number = parseInt(prompt('Give me a number to add:'));
+            // console.log(x + number);
+
+            // Comparison Operators
+            // > greater than
+            // < less than
+            // >= greater than or equal to
+            // <=  less than or equal to
+            // == equal to
+            // != not equal to
+            // === equal to and the data is the same
+            
+            if(x > y){
+                console.log('X is greater than Y');
+            }
+            else{
+                console.log('Y is greater than X');
+            }
+            if('coding' == 'coding'){
+                console.log('These are the same word!');
+            }
+            else{
+                console.log('These are not the same words!');
+            }
+
+            // Logical Operators
+            // && and - to be true every thing has to be true
+            // || or - to be true, on thing has to be true
+            // ! not - negates a boolean (flips from true to false or false to true)
+            
+            if(x >= 5 && y >= 5){
+                console.log('Both X & Y are at least 5');
+            }
+        }
+        function loopsAndRandom(){
+            // Info for Loops
+            // For loop
+            // for(let i = 0; i < 10; i++){
+            //     console.log(i);
+            // }
+
+            // While loop
+            // let x = 100;
+            // while(x > 0){
+            //     console.log(x);
+            //     x -= 5;
+            // }
+
+            // Primitive 'Do While loop' 
+            // while(true){
+            //     let name = prompt('What is your name?');
+            //     if(name == 'Boot'){
+            //         console.log('great name');
+            //         break;
+            //     }
+            //     else{
+            //         console.log('Try again')
+            //     }
+            // }
+
+            // Do While loop
+            // let name;
+            // do{
+            //     name = prompt('What is your name? (enter X to exit prompt)');
+            //     if(name == 'X'){
+            //         break;
+            //     }
+            // }
+            // while(name != 'Boot');
+
+            // Random Numbers
+            let randomNumber = Math.floor(Math.random() * (200 - 100)) + 100;
+            console.log(randomNumber);
+            // Math.floor(Math.random() * (high Number - low number)) + low number;
+
+            let counter = 0; // make sure it is global
+            counter++;
+        }
+        function switchStatements(){
+            let name = prompt('What is your name');
+            console.log(name);
+            switch(name){
+                case 'Coach Floyd':
+                    console.log('I am the teacher');
+                    break;
+                case 'Holly':
+                case 'Luke':
+                case 'Jossa':
+                    console.log('Here');
+                    break;
+                case 'Liam':
+                    console.log('Not here');
+                    break;
+                default: 
+                    console.log('Wrong Room');
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
