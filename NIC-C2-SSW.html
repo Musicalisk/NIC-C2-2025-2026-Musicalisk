@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Statement Website | Gabriel Bouteiller</title>
+</head>
+<body onload="orderList()">
+    Switch Statement Website | Gabriel Bouteiller
+    <hr>
+    <Button onclick="orderList()">Again?</Button>
+    <hr>
+    <script>
+        function orderList(){
+            let input;
+            let exit = 0;
+            let counter = 0;
+            do{
+                alert('Choose your favorite band from the list: Deftones, Korn, Linkin Park, Slipknot, Pleymo, Enchancer, Watcha, Wünjo, Limp Bizkit, Others: ');
+                input = prompt("Type in your favorite: ");
+                switch(input){
+                    case 'Deftones': 
+                    case 'Korn': 
+                    case 'Linkin Park': 
+                    case 'Limp Bizkit': 
+                        alert('That will be $14.99!');
+                        return exit++;
+                    case 'Pleymo':
+                    case 'Enhancer': 
+                    case 'Watcha': 
+                    case 'Wünjo': 
+                        alert('That will be €12.83!');
+                        return exit++;
+                    case 'Slipknot': 
+                        alert('That will be $24.99');
+                        return exit++;
+                    case 'Others': 
+                        alert("Sorry, we don't currently have that band today.");
+                        return exit++;
+                    default: 
+                        alert('Please select a valid option');
+                }
+                counter++;
+                console.log(counter);
+                if(exit == 1){
+                    counter += 7;
+                }
+            }
+            while(counter != 7)
+        }
+    </script>
+</body>
+</html>
