@@ -15,6 +15,8 @@
     <button onclick="loopsAndRandom()">Loops and Random</button>
     <hr>
     <button onclick="switchStatements()">Switch Statements</button>
+    <hr>
+    <button onclick="arraysReview()">Arrays</button>
     <script>
         function variablesAndUserInputs(){
             let name = 'Boot';
@@ -141,6 +143,28 @@
                 default: 
                     console.log('Wrong Room');
                     break;
+            }
+        }
+        function arraysReview(){
+            let names = ['Coach Floyd', 'Sabrian', 'Liam', 'Holly']
+            let winnerList = [];
+            console.log(names[0]);
+            // console.log(names[3]);
+            let indexNumber = names.indexOf('Coach Floyd');
+            // -1 means it is not in the array
+            // console.log(indexNumber);
+            names.splice(indexNumber, 1);
+            // console.log(names);
+            names.push('Jossa');
+            names.push('Luke');
+            console.log(names);
+            while(names.length > 0){
+                let randomIndex = Math.floor(Math.random() * names.length);
+                console.log(names[randomIndex] + ' is the Winner!');
+                winnerList.push(names[randomIndex]);
+                names.splice(randomIndex, 1);
+                console.log(names);
+                console.log(winnerList);
             }
         }
     </script>
