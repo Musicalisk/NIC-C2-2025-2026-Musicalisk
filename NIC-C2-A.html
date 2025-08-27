@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays | Gabriel Bouteiller</title>
+</head>
+<body">
+    Arrays | Gabriel Bouteiller
+    <hr>
+    <button onclick="buttonOne()">Create Array</button>
+    <hr>
+    <button onclick="buttonTwo()">Shuffle Array</button>
+    <hr>
+    <button onclick="buttonThree()">Find 4th Highest Number in Array</button>
+    <hr>
+    <script type="text/javascript">
+        var inputArray = [];
+        var outputArray = [];
+        function buttonOne(){
+            let input;
+            for(let i = 0; i < 10; i++){
+                input = parseInt(prompt('Enter a Number: '));
+                inputArray.push(input);
+            }
+            console.log(inputArray);
+        }
+        function buttonTwo(){
+            let arrayShuffle;
+                for(i = 0; i < 10; i++){
+                    arrayShuffle = Math.floor(Math.random() * inputArray.length);
+                    outputArray.push(inputArray[arrayShuffle]);
+                    inputArray.splice(arrayShuffle, 1);
+                }
+                console.log(inputArray);
+                console.log(outputArray);
+        }
+        function buttonThree(){
+            let fourthValueInArray;
+            outputArray.sort();
+        }
+    </script>
+</body>
+</html>
