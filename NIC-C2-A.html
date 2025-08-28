@@ -8,11 +8,11 @@
 <body">
     Arrays | Gabriel Bouteiller
     <hr>
-    <button onclick="buttonOne()">Create Array</button>
+    <button onclick="buttonOne();">Create Array</button>
     <hr>
-    <button onclick="buttonTwo()">Shuffle Array</button>
+    <button onclick="buttonTwo();">Shuffle Array</button>
     <hr>
-    <button onclick="buttonThree()">Find 4th Highest Number in Array</button>
+    <button onclick="shuffleBypass(); buttonThree();">Find 4th Highest Number in Array</button>
     <hr>
     <script type="text/javascript">
         var inputArray = [];
@@ -27,17 +27,24 @@
         }
         function buttonTwo(){
             let arrayShuffle;
-                for(i = 0; i < 10; i++){
+                for(let i = 0; i < 10; i++){
                     arrayShuffle = Math.floor(Math.random() * inputArray.length);
                     outputArray.push(inputArray[arrayShuffle]);
                     inputArray.splice(arrayShuffle, 1);
                 }
-                console.log(inputArray);
                 console.log(outputArray);
         }
-        function buttonThree(){
-            let fourthValueInArray;
-            outputArray.sort();
+        function shuffleBypass(){
+            if(inputArray.length != 0){
+                outputArray = inputArray.slice();
+                inputArray.length = 0;
+            }
+         }
+       function buttonThree(){
+            outputArray.sort((a, b) => b - a);
+            console.log(outputArray);
+            alert('the fourth highest number in the shuffled array is ' + outputArray[3]);
+            outputArray.length = 0;
         }
     </script>
 </body>
