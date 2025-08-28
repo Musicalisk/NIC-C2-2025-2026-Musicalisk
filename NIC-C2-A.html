@@ -27,12 +27,12 @@
         }
         function buttonTwo(){
             let arrayShuffle;
-                for(let i = 0; i < 10; i++){
-                    arrayShuffle = Math.floor(Math.random() * inputArray.length);
-                    outputArray.push(inputArray[arrayShuffle]);
-                    inputArray.splice(arrayShuffle, 1);
-                }
-                console.log(outputArray);
+            for(let i = 0; i < 10; i++){
+                arrayShuffle = Math.floor(Math.random() * inputArray.length);
+                outputArray.push(inputArray[arrayShuffle]);
+                inputArray.splice(arrayShuffle, 1);
+            }
+            console.log(outputArray);
         }
         function shuffleBypass(){
             if(inputArray.length != 0){
@@ -40,7 +40,7 @@
                 inputArray.length = 0;
             }
          }
-       function buttonThree(){
+        function buttonThree(){
             outputArray.sort((a, b) => b - a);
             console.log(outputArray);
             alert('the fourth highest number in the shuffled array is ' + outputArray[3]);
