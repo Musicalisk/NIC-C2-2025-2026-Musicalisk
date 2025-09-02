@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIC-C2-AL | Gabriel Bouteiller</title>
+</head>
+<body onload="main();">
+    NIC-C2-AL | Gabriel Bouteiller
+    <hr>
+    <button onclick="buttonOne();">Sum of all even numbers in the main array</button>
+    <hr>
+    <script type="text/javascript">
+        var mainArray = [3, 6, 9, 54, 32, 56, 900, 234, 543, 2, 1, 6, 89, 43, 55, 67, 78, 8765, 432, 456, 788, 76543, 56, 90, 432, 234, 4556, 4321, 3, 6, 9, 4, 77, 22, 88, 90, 423, 123];
+        var evenArray = [];
+        var sumArray  = [];
+        function main(){
+            let forLoopLength = mainArray.length;
+            for(let i = 0; i < forLoopLength; i++){
+                if(mainArray[0] % 2 == 0){
+                    evenArray.push(mainArray[0]);
+                    mainArray.splice(0, 1);
+                }
+                else{
+                    mainArray.splice(0, 1);
+                }
+            }
+            sumArray = evenArray.slice();
+            while(sumArray.length != 1){
+                let addition = sumArray[0] + sumArray[1];
+                sumArray.push(addition);
+                sumArray.splice(0, 2);
+            }
+        }
+        function buttonOne(){
+            alert('Main array: 3,6,9,54,32,56,900,234,543,2,1,6,89,43,55,67,78,8765,432,456,788,76543,56,90,432,234,4556,4321,3,6,9,4,77,22,88,90,423,123');
+            alert('Even Array: ' + evenArray);
+            alert('All the even numbers of the root array are equal to ' + sumArray);
+        }
+    </script>
+</body>
+</html>
