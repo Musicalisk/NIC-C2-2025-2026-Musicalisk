@@ -17,6 +17,9 @@
     <button onclick="switchStatements()">Switch Statements</button>
     <hr>
     <button onclick="arraysReview()">Arrays</button>
+    <hr>
+    <button onclick="stringStuff()">String Stuff</button>
+    <hr>
     <script>
         function variablesAndUserInputs(){
             let name = 'Boot';
@@ -173,6 +176,22 @@
                 }
             }
             console.log(winnerList.join("->")); 
+        }
+        function stringStuff(){
+            let name = "Coach Floyd";
+            console.log(name.length);
+            console.log(name.charAt(6));
+            console.log(name.indexOf(" "));
+            name = name.concat(" teaches Coding 1");
+            console.log(name);
+            name += " and Coding 2";
+            console.log(name);
+            let first = name.substring(0, 5);
+            console.log(first);
+            let last = name.substr(6, 5);
+            console.log(last);
+            name = first + " " + last;
+            console.log(name);
         }
     </script>
 </body>
