@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIC-C2-SM | Gabriel Bouteiller</title>
+</head>
+<body onload="main();">
+    NIC-C2-SM | Gabriel Bouteiller
+    <hr>
+    <button onclick="main();">Redo String Check</button>
+    <hr>
+    <button onclick="buttonOne();">Insert Email</button>
+    <hr>
+    <button onclick="buttonTwo();">Capitalize your Sentences!</button>
+    <hr>
+    <script type="text/javascript">
+        function main(){
+            let counter = 0;
+            let noInput = ' ';
+            let inputString;
+            let outputString = 'Py';
+            do{
+                inputString = prompt("Input anything: ");
+                if(inputString.substring(0, 2) == ('py' || 'PY' || 'Py' || 'pY')){
+                    alert(inputString);
+                    break;
+                }
+                if(inputString.substring(0, 2) != ('py' || 'PY' || 'Py' || 'pY')){
+                    outputString += inputString;
+                    alert(outputString);
+                    break;
+                }
+                counter++;
+            }
+            while(counter != 2);
+        }
+        function buttonOne(){
+
+        }
+        function buttonTwo(){
+
+        }
+    </script>
+</body>
+</html>
