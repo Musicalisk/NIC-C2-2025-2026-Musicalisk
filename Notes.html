@@ -192,6 +192,28 @@
             console.log(last);
             name = first + " " + last;
             console.log(name);
+            let sentence = prompt("Please enter a sentence: ");
+            console.log(sentence);
+            let wordArray = sentence.split(" ");
+            console.log(wordArray);
+            for(let i = 0; i < wordArray.length; i++){
+                if(wordArray[i].length > 1){
+                    let first = wordArray[i].substr(0, 1);
+                    first = first.toUpperCase();
+                    console.log(first);
+                    let last = wordArray[i].substr(1);
+                    last = last.toLowerCase();
+                    console.log(last);
+                    wordArray[i] = first + last;
+                    console.log(wordArray[i]);
+                }
+                else{
+                    wordArray[i] = wordArray[i].toUpperCase();
+                }
+            }
+            console.log(wordArray);
+            sentence = wordArray.join(" ");
+            alert(sentence);
         }
     </script>
 </body>
