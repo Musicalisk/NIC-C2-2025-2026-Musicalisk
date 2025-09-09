@@ -20,23 +20,32 @@
             let noInput = ' ';
             let inputString;
             let outputString = 'Py';
-            do{
                 inputString = prompt("Input anything: ");
                 if(inputString.substring(0, 2) == ('py' || 'PY' || 'Py' || 'pY')){
                     alert(inputString);
-                    break;
                 }
                 if(inputString.substring(0, 2) != ('py' || 'PY' || 'Py' || 'pY')){
                     outputString += inputString;
                     alert(outputString);
-                    break;
                 }
-                counter++;
-            }
-            while(counter != 2);
         }
         function buttonOne(){
-
+            let inputString = prompt("Insert your Email: ");
+            console.log(inputString);
+            let outputString = inputString.indexOf("@");
+            let last = inputString.substr(outputString);
+            let first = inputString.substr(0, 5);
+            let middle = inputString.substr(5);
+            let emailHide;
+            console.log(last.length);
+            console.log(middle.length);
+            middle = middle.length - last.length;
+            console.log(middle);
+            for(let i = 0; i < middle; i++){
+                emailHide += '*';
+            }
+            outputString = first + emailHide + last;
+            console.log(outputString); 
         }
         function buttonTwo(){
 
