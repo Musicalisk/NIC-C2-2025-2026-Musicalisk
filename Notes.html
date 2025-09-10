@@ -214,6 +214,18 @@
             console.log(wordArray);
             sentence = wordArray.join(" ");
             alert(sentence);
+            let email = prompt("enter you email:");
+            let f = email.substr(0, 5);
+            let index = email.indexOf("@");
+            let l = email.substr(index);
+            let middle = f + '***' + l;
+            alert(middle);
+            let letter = 'e';
+            let num = letter.charCodeAt(letter);
+            console.log(num);
+            num += 8;
+            let newLetter = String.fromCharCode(num);
+            console.log(newLetter);
         }
     </script>
 </body>
