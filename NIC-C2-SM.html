@@ -16,39 +16,43 @@
     <hr>
     <script type="text/javascript">
         function main(){
-            let counter = 0;
-            let noInput = ' ';
             let inputString;
             let outputString = 'Py';
                 inputString = prompt("Input anything: ");
-                if(inputString.substring(0, 2) == ('py' || 'PY' || 'Py' || 'pY')){
+                if(inputString.substring(0, 2) === 'Py'){
                     alert(inputString);
                 }
-                if(inputString.substring(0, 2) != ('py' || 'PY' || 'Py' || 'pY')){
+                if(inputString.substring(0, 2) !== 'Py'){
                     outputString += inputString;
                     alert(outputString);
                 }
         }
         function buttonOne(){
             let inputString = prompt("Insert your Email: ");
-            console.log(inputString);
-            let outputString = inputString.indexOf("@");
-            let last = inputString.substr(outputString);
+            let index = inputString.indexOf('@');
             let first = inputString.substr(0, 5);
-            let middle = inputString.substr(5);
-            let emailHide;
-            console.log(last.length);
-            console.log(middle.length);
-            middle = middle.length - last.length;
-            console.log(middle);
-            for(let i = 0; i < middle; i++){
-                emailHide += '*';
-            }
-            outputString = first + emailHide + last;
-            console.log(outputString); 
+            let last = inputString.substr(index);
+            let outputString = first + '******' + last;
+            alert('your email is now hidden as: ' + outputString);
         }
         function buttonTwo(){
-
+            let inputString = prompt("Please enter a sentence: ");
+            let output;
+            let array = inputString.split(" ");
+            for(let i = 0; i < array.length; i++){
+                if(array[i].length > 1){
+                    let first = array[i].substr(0, 1);
+                    let last = array[i].substr(1);
+                    first = first.toUpperCase();
+                    last = last.toLowerCase();
+                    array[i] = first + last;
+                }
+                else{
+                    array[i] = array[i].toUpperCase();
+                }
+            }
+            output = array.join(" ");
+            alert(output);
         }
     </script>
 </body>
