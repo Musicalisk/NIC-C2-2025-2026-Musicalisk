@@ -15,25 +15,27 @@
     <button onclick="buttonTwo();">Decrypt</button>
     <hr>
     <script type="text/javascript">
-        var inputString = prompt("Enter your message: ");
-        document.getElementById("output").innerHTML = inputString;
+        var visualString = prompt("Enter your message: ");
+        document.getElementById("output").innerHTML = visualString;
         function buttonOne(){
-            // split input into an array
-            // loop through the array
-                // get charCodeAt
-                // add key
-                // get new character code
-                // store new character in array
-            // after the loop, join back together input
+            stringArray = visualString.split("");
+            for(let i = 0; i < stringArray.length; i++){
+                let letter = stringArray[i].charCodeAt();
+                let encrypt = letter + (3 * i);
+                stringArray[i] = String.fromCharCode(encrypt);
+            }
+            visualString = stringArray.join("");
+            document.getElementById("output").innerHTML = visualString;
         }
         function buttonTwo(){
-            // split input into an array
-            // loop through the array
-                // get charCodeAt
-                // go through key
-                // get new character code
-                // store new character in array
-            // after the loop, join back together input
+            stringArray = visualString.split("");
+            for(let i = 0; i < stringArray.length; i++){
+                let letter = stringArray[i].charCodeAt();
+                let decrypt = letter - (3 * i);
+                stringArray[i] = String.fromCharCode(decrypt);
+            }
+            visualString = stringArray.join("");
+            document.getElementById("output").innerHTML = visualString;
         }
     </script>
 </body>
