@@ -8,21 +8,69 @@
 <body onload="main();">
     NIC-C2-PC | Gabriel Bouteiller
     <hr>
-    Error handling for when the user doesn't input any text.
-    <hr>
-    Checkers to make sure the password is at least 8 characters long
-    <hr>
-    Checkers to make sure the password has at least 1 Capital letter
-    <hr>
-    Checkers to make sure the password has at least 1 special character (@#$!&.)
+    <h1 id="mainOutput" style="font-size: 14px"></h1>
     <hr>
     Checkers to make sure the password has at least 1 number
     <hr>
     Tell the user if their password is acceptable or if they need to add a Capital, a number, or a special character
     <hr>
+    <button onclick="main();">Input Password</button>
+    <hr>
     <script type="text/javascript">
         function main(){
-            
+            let passwordComplete = false;
+            let outputString;
+            let inputString = prompt("Input a Password: ");
+            document.getElementById("mainOutput").innerHTML = inputString;
+            if(inputString === ""){
+                outputString = " | Input a Password";
+                document.getElementById("mainOutput").innerHTML += outputString;
+            }
+            else if(inputString.length >= 8){
+                let stringArray = inputString.split("");
+                let upperCaseCheck = false;
+                for(let i = 0; i < stringArray.length; i++){
+                    if(stringArray[i] === stringArray[i].toUpperCase()){
+                        upperCaseCheck = true;
+                        break;
+                    }
+                }
+                if(upperCaseCheck === true){
+                    let specialCharacterCheck = false;
+                    for(let i = 0; i < stringArray.length; i++){
+                        switch(stringArray[i]){
+                            case '@':
+                            case '#':
+                            case '$':
+                            case '!':
+                            case '&':
+                            case '.':
+                                specialCharacterCheck = true;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    if(specialCharacterCheck === true){
+                        let numberCheck = false;
+                        for(let i = 0; i < stringArray.length; i++){
+                            // future coide here for number check
+                        }
+                    }
+                    else{
+                        outputString = " | Please input at least One Special character: ";
+                        document.getElementById("mainOutput").innerHTML += outputString;
+                    }
+                }
+                else{
+                    outputString = " | Please input at least One Upper case character: ";
+                    document.getElementById("mainOutput").innerHTML += outputString;
+                }
+            }
+            else{
+                outputString = " | Please input at least Eight characters: ";
+                document.getElementById("mainOutput").innerHTML += outputString;
+            }
         }
     </script>
 </body>
