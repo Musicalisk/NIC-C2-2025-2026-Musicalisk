@@ -10,10 +10,6 @@
     <hr>
     <h1 id="mainOutput" style="font-size: 14px"></h1>
     <hr>
-    Checkers to make sure the password has at least 1 number
-    <hr>
-    Tell the user if their password is acceptable or if they need to add a Capital, a number, or a special character
-    <hr>
     <button onclick="main();">Input Password</button>
     <hr>
     <script type="text/javascript">
@@ -54,7 +50,31 @@
                     if(specialCharacterCheck === true){
                         let numberCheck = false;
                         for(let i = 0; i < stringArray.length; i++){
-                            // future coide here for number check
+                            switch(stringArray[i]){
+                                case '0':
+                                case '1':
+                                case '2':
+                                case '3':
+                                case '4':
+                                case '5':
+                                case '6':
+                                case '7':
+                                case '8':
+                                case '9':
+                                    numberCheck = true;
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        if(numberCheck === true){
+                            alert('This Password is acceptable!');
+                            outputString = " | This Password is acceptable!";
+                            document.getElementById("mainOutput").innerHTML += outputString;
+                        }
+                        else{
+                            outputString = " | Please input at least One Number character: ";
+                            document.getElementById("mainOutput").innerHTML += outputString;
                         }
                     }
                     else{
