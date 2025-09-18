@@ -20,6 +20,17 @@
     <hr>
     <button onclick="stringStuff()">String Stuff</button>
     <hr>
+    <form onsubmit="return false" id="nameForm">
+        <!--<p>Enter your Name</p>-->
+        <input type="text" id="name" placeholder="Enter your Name">
+        <br>
+        <input type="text" id="age" placeholder="Enter your Age">
+        <br>
+        <input type="password" id="password" placeholder="Enter your Password">
+        <br>
+        <button onclick="getName();">Get Name</button>
+    </form>
+    <hr>
     <script type="text/javascript">
         function variablesAndUserInputs(){
             let name = 'Boot';
@@ -237,6 +248,13 @@
             // const example = /0-9/.test(test1);
             // const example = /@#!$./.test(test1);
             // Regular expression on password checker: returns a boolean
+        }
+        function getName(){
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var password = document.getElementById("password").value;
+            console.log(name + ' ' + age + ' ' + password);
+            document.getElementById("nameForm").reset();
         }
     </script>
 </body>
