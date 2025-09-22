@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIC-C2-BO | Gabriel Bouteiller</title>
+</head>
+<body>
+    NIC-C2-BO | Gabriel Bouteiller
+    <hr>
+    When all books are entered, have another button that uses a loop to access the printOut method from the class to print the information about each book.
+    <hr>
+    <form onsubmit="return false" id="main">
+        <input type="text" id="inputOne" placeholder="Enter Title of Book: ">
+        <br>
+        <input type="text" id="inputTwo" placeholder="Enter Author Name: ">
+        <br>
+        <input type="text" id="inputThree" placeholder="Enter the # of Pages: ">
+        <br>
+        <button onclick="buttonOne();">Enter Book</button>
+        <button onclick="buttonTwo();">Display Book(s)</button>
+    </form>
+    <hr>
+    <h1 id="output" style="font-size: 14px;">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </h1>
+    <hr>
+    <script type="text/javascript">
+        var arrayOne = [];
+        function buttonOne(){
+            var inputOne = document.getElementById("inputOne").value;
+            var inputTwo = document.getElementById("inputTwo").value;
+            var inputThree = document.getElementById("inputThree").value;
+            let outputOne = {
+                title: inputOne,
+                author: inputTwo,
+                page: inputThree,
+                printOutput(){
+                    console.log("Book: " + this.title + " Author: " + this.author + " Page Count: " + this.page);
+                }
+            }
+            arrayOne.push(outputOne);
+            document.getElementById("main").reset();
+        }
+        function buttonTwo(){
+            let stringOne;
+            for(let i = 0; i < arrayOne.length; i++){
+                stringOne += arrayOne[i].printOutput();
+            }
+            document.getElementById("output").innerHTML = stringOne;
+        }
+    </script>
+</body>
+</html>
