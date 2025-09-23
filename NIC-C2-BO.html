@@ -10,6 +10,14 @@
     <hr>
     When all books are entered, have another button that uses a loop to access the printOut method from the class to print the information about each book.
     <hr>
+    <h1 id="output" style="font-size: 14px;">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </h1>
+    <hr>
     <form onsubmit="return false" id="main">
         <input type="text" id="inputOne" placeholder="Enter Title of Book: ">
         <br>
@@ -20,14 +28,6 @@
         <button onclick="buttonOne();">Enter Book</button>
         <button onclick="buttonTwo();">Display Book(s)</button>
     </form>
-    <hr>
-    <h1 id="output" style="font-size: 14px;">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    </h1>
     <hr>
     <script type="text/javascript">
         var arrayOne = [];
@@ -40,18 +40,19 @@
                 author: inputTwo,
                 page: inputThree,
                 printOutput(){
-                    console.log("Book: " + this.title + " Author: " + this.author + " Page Count: " + this.page);
+                    return "Book: " + this.title + " Author: " + this.author + " Page Count: " + this.page;
                 }
             }
             arrayOne.push(outputOne);
             document.getElementById("main").reset();
         }
         function buttonTwo(){
-            let stringOne;
+            let outputTwo = "";
             for(let i = 0; i < arrayOne.length; i++){
-                stringOne += arrayOne[i].printOutput();
+                outputTwo += arrayOne[i].printOutput();
+                outputTwo += "<br>";
             }
-            document.getElementById("output").innerHTML = stringOne;
+            document.getElementById("output").innerHTML = outputTwo;
         }
     </script>
 </body>
