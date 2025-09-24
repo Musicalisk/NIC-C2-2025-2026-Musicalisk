@@ -256,19 +256,34 @@
             var age = document.getElementById("age").value;
             var password = document.getElementById("password").value;
             // console.log(name + ' ' + age + ' ' + password);
-            let person = {
-                personName: name,
-                personAge: age,
-                personPassword: password,
+            // let person = {
+                // personName: name,
+                // personAge: age,
+                // personPassword: password,
+                // printPerson(){
+                    // console.log(this.personName + " is " + this.personAge + " years old!");
+                // }
+            // }
+            class Person {
+                constructor(name, age){
+                    this.personName = name;
+                    this.personAge = age;
+                }
                 printPerson(){
                     console.log(this.personName + " is " + this.personAge + " years old!");
                 }
+                happyBirthday(){
+                    this.personAge++;
+                }
             }
+            let person = new Person(name, age);
             people.push(person);
             document.getElementById("nameForm").reset();
         }
         function printPeople(){
             for(let i = 0; i < people.length; i++){
+                people[i].printPerson();
+                people[i].happyBirthday();
                 people[i].printPerson();
             }
         }
