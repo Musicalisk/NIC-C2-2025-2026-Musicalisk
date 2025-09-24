@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NIC-C2-E2 | Gabriel Bouteiller</title>
+</head>
+<body>
+    NIC-C2-E2 | Gabriel Bouteiller
+    <hr>
+    <button onclick="add()">add</button>
+    <hr>
+    <button onclick="subtract()">subtract</button>
+    <hr>
+    <button onclick="multiply()">multiply</button>
+    <hr>
+    <button onclick="divide()">divide</button>
+    <hr>
+    <button onclick="modulus()">modulus</button>
+    <hr>
+    <script>
+        function add(){
+            var num1 = parseInt(prompt("Enter a number: "));
+            var num2 = parseInt(prompt("Enter a number: "));
+            var sum = num1 + num2;
+            alert("The sum is " + sum);
+        }
+        function subtract(){
+            var num1 = parseInt(prompt("Enter a number: "));
+            var num2 = parseInt(prompt("Enter a number: "));
+            var difference = num1 - num2;
+            alert("The difference is " + difference);
+        }
+        function multiply(){
+            var num1 = parseInt(prompt("Enter a number: "));
+            var num2 = parseInt(prompt("Enter a number: "));
+            var product = num1 * num2;
+            alert("The product is " + product);
+        }
+        function divide(){
+            var num1 = parseInt(prompt("Enter a number: "));
+            var num2 = parseInt(prompt("Enter a number: "));
+            var quotient = num1 / num2;
+            alert("The quotient is " + quotient);
+        }
+        function modulus(){
+            var num1 = parseInt(prompt("Enter a number: "));
+            var num2 = parseInt(prompt("Enter a number: "));
+            var mod = num1 % num2;
+            alert("The remainder is " + mod);
+        }
+    </script>
+</body>
+</html>
