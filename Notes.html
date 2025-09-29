@@ -30,6 +30,8 @@
         <br>
         <button onclick="getName();">Get Name</button>
         <button onclick="printPeople();">Print People</button>
+        <br>
+        <button onclick="findAge();">Find Age</button>
     </form>
     <hr>
     <script type="text/javascript">
@@ -285,6 +287,25 @@
                 people[i].printPerson();
                 people[i].happyBirthday();
                 people[i].printPerson();
+            }
+        }
+        function findAge(){
+            let age = prompt('What age are you?');
+            // for(let i = 0; i < people.length; i++){
+                // if(people[i].personAge == age){
+                    // console.log('Yes, ' + people[i].personName + ' is ' + people[i].personAge + '!');
+                // }
+                // else{
+                    // console.log('Nope');
+                // }
+            // }
+            for(let person in people){
+                if(people[person].personAge == age){
+                    console.log('Yes, ' + people[person].personName + ' is ' + people[person].personAge + '!');
+                }
+                else{
+                    console.log('Nope');
+                }
             }
         }
     </script>
