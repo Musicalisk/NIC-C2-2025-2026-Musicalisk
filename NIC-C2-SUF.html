@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIC-C2-SUF | Gabriel Bouteiller</title>
+</head>
+<body>
+    NIC-C2-SUF | Gabriel Bouteiller
+    <hr>
+    1. Require the email address to end in @gmail.com or @yahoo.com
+    <hr>
+    2. Require the password to be at least 8 characters, have 1 capital letter, at least 1 number, and at least 1 symbol (use your password checker code)
+    <hr>
+    3. Make sure the user name is not already in use
+    <hr>
+    4. Have a message that tells the user their account is created.
+    <hr>
+    <h1 id="output"></h1>
+    <hr>
+    <form onsubmit="return false" id="input">
+        <input type="text" id="inputOne" placeholder="Enter Username: ">
+        <br>
+        <input type="text" id="inputTwo" placeholder="Enter Email: ">
+        <br>
+        <input type="text" id="inputThree" placeholder="Enter Password: ">
+        <br>
+        <button onclick="main();">Create Account</button>
+    </form>
+    <hr>
+    <script type="text/javascript">
+        let output = ['<br>' + '<br>' + '<br>' + '<br>' + '<br>'];
+        document.getElementById("output").innerHTML = output;
+        output = "";
+        arrayOne = [];
+        function main(){
+            var inputOne = document.getElementById("inputOne").value;
+            var inputTwo = document.getElementById("inputTwo").value;
+            var inputThree = document.getElementById("inputThree").value;
+            let index = inputTwo.indexOf('@');
+            let first = inputTwo.substr(0, index);
+            let last = inputTwo.substr(index);
+            if(last == '@gmail.com' | '@yahoo.com'){
+                alert("1");
+            }
+            else{
+                document.getElementById("output").innerHTML = output;
+                output = " | Input either @gmail.com or @yahoo.com: <br>";
+                document.getElementById("output").innerHTML += output;
+            }
+            // class Person{
+            //     constructor(inputOne, inputTwo, inputThree){
+            //         this.personName = inputOne;
+            //         this.personEmail = inputTwo;
+            //         this.personKey = inputThree;
+            //     }
+            //     methodOne(){
+            //         return "Username: " + this.personName + "Email: " + this.personEmail + "Password: " + this.personKey;
+            //     }
+            // }
+        }
+
+    </script>
+</body>
