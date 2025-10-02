@@ -8,10 +8,6 @@
 <body>
     NIC-C2-SUF | Gabriel Bouteiller
     <hr>
-    1. Require the email address to end in @gmail.com or @yahoo.com
-    <hr>
-    2. Require the password to be at least 8 characters, have 1 capital letter, at least 1 number, and at least 1 symbol (use your password checker code)
-    <hr>
     3. Make sure the user name is not already in use
     <hr>
     4. Have a message that tells the user their account is created.
@@ -31,34 +27,120 @@
     <script type="text/javascript">
         let output = ['<br>' + '<br>' + '<br>' + '<br>' + '<br>'];
         document.getElementById("output").innerHTML = output;
-        output = "";
-        arrayOne = [];
+        output = "<hr>";
+        var arrayOne = [];
+        var arrayTwo = [];
         function main(){
+            document.getElementById("output").innerHTML = output;
             var inputOne = document.getElementById("inputOne").value;
             var inputTwo = document.getElementById("inputTwo").value;
             var inputThree = document.getElementById("inputThree").value;
+            // document.getElementById("input").reset();
             let index = inputTwo.indexOf('@');
             let first = inputTwo.substr(0, index);
             let last = inputTwo.substr(index);
             if(last == '@gmail.com' | '@yahoo.com'){
-                alert("1");
+                if(inputThree.length >= 8){
+                    let stringArray = inputThree.split("");
+                    let upperCaseCheck = false;
+                    for(let i = 0; i < stringArray.length; i++){
+                        if(stringArray[i] === stringArray[i].toUpperCase()){
+                            upperCaseCheck = true;
+                            break;
+                        }
+                    }
+                    if(upperCaseCheck === true){
+                        let specialCharacterCheck = false;
+                        for(let i = 0; i < stringArray.length; i++){
+                            switch(stringArray[i]){
+                                case '@':
+                                case '#':
+                                case '$':
+                                case '!':
+                                case '&':
+                                case '.':
+                                    specialCharacterCheck = true;
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        if(specialCharacterCheck === true){
+                            let numberCheck = false;
+                            for(let i = 0; i < stringArray.length; i++){
+                                switch(stringArray[i]){
+                                    case '0':
+                                    case '1':
+                                    case '2':
+                                    case '3':
+                                    case '4':
+                                    case '5':
+                                    case '6':
+                                    case '7':
+                                    case '8':
+                                    case '9':
+                                        numberCheck = true;
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            if(numberCheck === true){
+                                // add check for username(inputOne) here:
+                                // class Person{
+                                //     constructor(inputOne, inputTwo, inputThree){
+                                //         this.personName = inputOne;
+                                //         this.personEmail = inputTwo;
+                                //         this.personKey = inputThree;
+                                //     }
+                                //     methodOne(){
+                                //         return " | Username: " + this.personName + " Email: " + this.personEmail + " Password: " + this.personKey + "!";
+                                //     }
+                                // }
+                                // let newAccount = new Person(inputOne, inputTwo, inputThree);
+                                // arrayOne.push(newAccount);
+                                // for(let i = 0; i < arrayOne.length; i++){
+                                    // output = "<br>";
+                                    // document.getElementById("output").innerHTML += output;
+                                    // output = arrayOne[i].methodOne();
+                                    // document.getElementById("output").innerHTML += output;
+                                // }
+                            }
+                            else{
+                                output = "<br>";
+                                document.getElementById("output").innerHTML += output;
+                                output = " | Please input at least One Number character: ";
+                                document.getElementById("output").innerHTML += output;
+                            }
+                        }
+                        else{
+                            output = "<br>";
+                            document.getElementById("output").innerHTML += output;
+                            output = " | Please input at least One Special character: ";
+                            document.getElementById("output").innerHTML += output;
+                        }
+                    }
+                    else{
+                        output = "<br>";
+                        document.getElementById("output").innerHTML += output;
+                        output = " | Please input at least One Upper case character: ";
+                        document.getElementById("output").innerHTML += output;
+                    }
+                }
+                else{
+                    output = "<br>";
+                    document.getElementById("output").innerHTML += output;
+                    output = " | Please input at least Eight characters: ";
+                    document.getElementById("output").innerHTML += output;
+                }
             }
             else{
                 document.getElementById("output").innerHTML = output;
                 output = " | Input either @gmail.com or @yahoo.com: <br>";
                 document.getElementById("output").innerHTML += output;
             }
-            // class Person{
-            //     constructor(inputOne, inputTwo, inputThree){
-            //         this.personName = inputOne;
-            //         this.personEmail = inputTwo;
-            //         this.personKey = inputThree;
-            //     }
-            //     methodOne(){
-            //         return "Username: " + this.personName + "Email: " + this.personEmail + "Password: " + this.personKey;
-            //     }
-            // }
         }
 
     </script>
 </body>
+</html>
