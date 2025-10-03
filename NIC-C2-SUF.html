@@ -29,13 +29,22 @@
         document.getElementById("output").innerHTML = output;
         output = "<hr>";
         var arrayOne = [];
-        var arrayTwo = [];
+        class Person{
+            constructor(inputOne, inputTwo, inputThree){
+                this.personName = inputOne;
+                this.personEmail = inputTwo;
+                this.personKey = inputThree;
+            }
+            methodOne(){
+                return " / Username: " + this.personName + " / Email: " + this.personEmail + " / Password: " + this.personKey;
+            }
+        }
         function main(){
             document.getElementById("output").innerHTML = output;
             var inputOne = document.getElementById("inputOne").value;
             var inputTwo = document.getElementById("inputTwo").value;
             var inputThree = document.getElementById("inputThree").value;
-            // document.getElementById("input").reset();
+            document.getElementById("input").reset();
             let index = inputTwo.indexOf('@');
             let first = inputTwo.substr(0, index);
             let last = inputTwo.substr(index);
@@ -86,26 +95,34 @@
                                 }
                             }
                             if(numberCheck === true){
-                                // add check for username(inputOne) here:
-                                // class Person{
-                                //     constructor(inputOne, inputTwo, inputThree){
-                                //         this.personName = inputOne;
-                                //         this.personEmail = inputTwo;
-                                //         this.personKey = inputThree;
-                                //     }
-                                //     methodOne(){
-                                //         return " | Username: " + this.personName + " Email: " + this.personEmail + " Password: " + this.personKey + "!";
-                                //     }
-                                // }
-                                // let newAccount = new Person(inputOne, inputTwo, inputThree);
-                                // arrayOne.push(newAccount);
-                                // for(let i = 0; i < arrayOne.length; i++){
-                                    // output = "<br>";
-                                    // document.getElementById("output").innerHTML += output;
-                                    // output = arrayOne[i].methodOne();
-                                    // document.getElementById("output").innerHTML += output;
-                                // }
-                            }
+                                let usernameCheck = false;
+                                let newAccount = new Person(inputOne, inputTwo, inputThree);
+                                if(arrayOne.length == 0){
+                                    usernameCheck = true;
+                                    arrayOne.push(newAccount);
+                                    output = "<br>";
+                                    document.getElementById("output").innerHTML += output;
+                                    output = " | Account: 1 " + arrayOne[0].methodOne();
+                                    document.getElementById("output").innerHTML += output;
+                                }
+                                else{
+                                    for(let i = 0; i < arrayOne.length; i++){
+                                        if(arrayOne[i].personName == inputOne && usernameCheck == true){
+                                            output = "<br>";
+                                            document.getElementById("output").innerHTML += output;
+                                            output = " | Username already in use: ";
+                                            document.getElementById("output").innerHTML += output;
+                                        }
+                                        else{
+                                            arrayOne.push(newAccount);
+                                            output = "<br>";
+                                            document.getElementById("output").innerHTML += output;
+                                            output = " | Account: " + (i + 1) + arrayOne[i].methodOne();
+                                            document.getElementById("output").innerHTML += output;
+                                        }
+                                    }
+                                }
+                            }    
                             else{
                                 output = "<br>";
                                 document.getElementById("output").innerHTML += output;
