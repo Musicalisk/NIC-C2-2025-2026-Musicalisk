@@ -7,11 +7,6 @@
 </head>
 <body>
     NIC-C2-SUF | Gabriel Bouteiller
-    <hr>
-    3. Make sure the user name is not already in use
-    <hr>
-    4. Have a message that tells the user their account is created.
-    <hr>
     <h1 id="output"></h1>
     <hr>
     <form onsubmit="return false" id="input">
@@ -28,6 +23,7 @@
         let output = ['<br>' + '<br>' + '<br>' + '<br>' + '<br>'];
         document.getElementById("output").innerHTML = output;
         output = "<hr>";
+        var counter = 1;
         var arrayOne = [];
         class Person{
             constructor(inputOne, inputTwo, inputThree){
@@ -95,32 +91,34 @@
                                 }
                             }
                             if(numberCheck === true){
-                                let usernameCheck = false;
-                                let newAccount = new Person(inputOne, inputTwo, inputThree);
+                                let usernameCheck = true;                       
                                 if(arrayOne.length == 0){
-                                    usernameCheck = true;
+                                    let newAccount = new Person(inputOne, inputTwo, inputThree);
                                     arrayOne.push(newAccount);
+                                    counter++;
                                     output = "<br>";
                                     document.getElementById("output").innerHTML += output;
                                     output = " | Account: 1 " + arrayOne[0].methodOne();
                                     document.getElementById("output").innerHTML += output;
                                 }
                                 else{
-                                    for(let i = 0; i < arrayOne.length; i++){
-                                        if(arrayOne[i].personName == inputOne && usernameCheck == true){
+                                    for(let i = 0; i < arrayOne.length; i++ && counter++){
+                                        if(arrayOne[i].personName == inputOne){
                                             output = "<br>";
                                             document.getElementById("output").innerHTML += output;
                                             output = " | Username already in use: ";
                                             document.getElementById("output").innerHTML += output;
+                                            usernameCheck = false;
                                         }
-                                        else{
+                                    }
+                                    if(usernameCheck == true){
+                                            let newAccount = new Person(inputOne, inputTwo, inputThree);
                                             arrayOne.push(newAccount);
                                             output = "<br>";
                                             document.getElementById("output").innerHTML += output;
-                                            output = " | Account: " + (i + 1) + arrayOne[i].methodOne();
+                                            output = " | Account: " + (counter) + arrayOne[(counter - 1)].methodOne();
                                             document.getElementById("output").innerHTML += output;
                                         }
-                                    }
                                 }
                             }    
                             else{
