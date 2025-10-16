@@ -34,6 +34,8 @@
         <button onclick="findAge();">Find Age</button>
     </form>
     <hr>
+    <button onclick="dateStuff();">Date Stuff</button>
+    <hr>
     <script type="text/javascript">
         let people = [];
         function variablesAndUserInputs(){
@@ -307,6 +309,17 @@
                     console.log('Nope');
                 }
             }
+        }
+        function dateStuff(){
+            let today = new Date();
+            let birthDate = new Date(2009, 0, 18, 6, 45, 0, 0);
+            console.log(today);
+            console.log(birthDate);
+            today = today.getTime();
+            birthDate = birthDate.getTime();
+            let output = today - birthDate;
+            output = new Date(output);
+            console.log(output);
         }
     </script>
 </body>
