@@ -113,13 +113,13 @@
                                         }
                                     }
                                     if(usernameCheck == true){
-                                            let newAccount = new Person(inputOne, inputTwo, inputThree);
-                                            arrayOne.push(newAccount);
-                                            output = "<br>";
-                                            document.getElementById("output").innerHTML += output;
-                                            output = " | Account: " + (counter) + arrayOne[(counter - 1)].methodOne();
-                                            document.getElementById("output").innerHTML += output;
-                                        }
+                                        let newAccount = new Person(inputOne, inputTwo, inputThree);
+                                        arrayOne.push(newAccount);
+                                        output = "<br>";
+                                        document.getElementById("output").innerHTML += output;
+                                        output = " | Account: " + (counter) + arrayOne[(counter - 1)].methodOne();
+                                        document.getElementById("output").innerHTML += output;
+                                    }
                                 }
                             }    
                             else{
@@ -156,7 +156,6 @@
                 document.getElementById("output").innerHTML += output;
             }
         }
-
     </script>
 </body>
 </html>

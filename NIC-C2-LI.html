@@ -26,7 +26,7 @@
     <script type="text/javascript">
         let output = ['<br>' + '<br>' + '<br>' + '<br>' + '<br>'];
         document.getElementById("output").innerHTML = output;
-        output = "<hr>";
+        output = " <br>";
         var counter = 1;
         var arrayOne = [];
         class Person{
@@ -100,56 +100,43 @@
                                     let newAccount = new Person(inputOne, inputTwo, inputThree);
                                     arrayOne.push(newAccount);
                                     counter++;
-                                    output = "<br>";
-                                    document.getElementById("output").innerHTML += output;
-                                    output = " | Account: 1 " + arrayOne[0].methodOne();
+                                    output = " | Account: 1 " + arrayOne[0].methodOne() + " <br>";
                                     document.getElementById("output").innerHTML += output;
                                 }
                                 else{
                                     for(let i = 0; i < arrayOne.length; i++ && counter++){
                                         if(arrayOne[i].personName == inputOne){
-                                            output = "<br>";
-                                            document.getElementById("output").innerHTML += output;
-                                            output = " | Username already in use: ";
+                                            output = " | Username already in use: <br>";
                                             document.getElementById("output").innerHTML += output;
                                             usernameCheck = false;
                                         }
                                     }
                                     if(usernameCheck == true){
-                                            let newAccount = new Person(inputOne, inputTwo, inputThree);
-                                            arrayOne.push(newAccount);
-                                            output = "<br>";
-                                            document.getElementById("output").innerHTML += output;
-                                            output = " | Account: " + (counter) + arrayOne[(counter - 1)].methodOne();
-                                            document.getElementById("output").innerHTML += output;
-                                        }
+                                        let newAccount = new Person(inputOne, inputTwo, inputThree);
+                                        arrayOne.push(newAccount);
+                                        output = " | Account: " + (counter) + arrayOne[(counter - 1)].methodOne() + " <br>";
+                                        document.getElementById("output").innerHTML += output;
+                                        output = "<br>";
+                                    }
                                 }
                             }    
                             else{
-                                output = "<br>";
-                                document.getElementById("output").innerHTML += output;
-                                output = " | Please input at least One Number character: ";
+                                output = " | Please input at least One Number character: <br>";
                                 document.getElementById("output").innerHTML += output;
                             }
                         }
                         else{
-                            output = "<br>";
-                            document.getElementById("output").innerHTML += output;
-                            output = " | Please input at least One Special character: ";
+                            output = " | Please input at least One Special character: <br>";
                             document.getElementById("output").innerHTML += output;
                         }
                     }
                     else{
-                        output = "<br>";
-                        document.getElementById("output").innerHTML += output;
-                        output = " | Please input at least One Upper case character: ";
+                        output = " | Please input at least One Upper case character: <br>";
                         document.getElementById("output").innerHTML += output;
                     }
                 }
                 else{
-                    output = "<br>";
-                    document.getElementById("output").innerHTML += output;
-                    output = " | Please input at least Eight characters: ";
+                    output = " | Please input at least Eight characters: <br>";
                     document.getElementById("output").innerHTML += output;
                 }
             }
@@ -161,13 +148,14 @@
         }
         function buttonOne(){
             if(arrayOne.length == 0){
-                output = "<br>";
-                document.getElementById("output").innerHTML += output;
-                output = " | No Account in Page Yet, Create an Account First: " 
+                document.getElementById("output").innerHTML = output;
+                output = " | No Account in page yet, Create an Account first: <br>" 
                 document.getElementById("output").innerHTML += output;
             }
-            for(let i = 0; i < arrayOne.length; i++){
+            else{
+                for(let i = 0; i < arrayOne.length; i++){
 
+                }
             }
         }
     </script>
