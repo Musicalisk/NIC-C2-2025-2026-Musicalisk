@@ -6,9 +6,8 @@
     <title>NIC-C2-LI | Gabriel Bouteiller</title>
 </head>
 <body>
-    NIC-C2-LI | Gabriel Bouteiller
     <hr>
-    This button should call a function that searches through all of the created users and lets the user know if they can log in or not.
+    NIC-C2-LI | Gabriel Bouteiller
     <hr>
     <h1 id="output"></h1>
     <hr>
@@ -147,14 +146,25 @@
             }
         }
         function buttonOne(){
+            document.getElementById("output").innerHTML = output;
+            var inputOne = document.getElementById("inputOne").value;
+            var inputTwo = document.getElementById("inputTwo").value;
+            var inputThree = document.getElementById("inputThree").value;
+            document.getElementById("input").reset();
             if(arrayOne.length == 0){
-                document.getElementById("output").innerHTML = output;
-                output = " | No Account in page yet, Create an Account first: <br>" 
+                output = " | No Account in page yet, Create an Account first: <br>";
                 document.getElementById("output").innerHTML += output;
             }
             else{
                 for(let i = 0; i < arrayOne.length; i++){
-
+                    if(arrayOne[i].personName == inputOne && arrayOne[i].personEmail == inputTwo && arrayOne[i].personKey == inputThree){
+                        output = " | You are logged in as " + inputOne + ": <br>";
+                        document.getElementById("output").innerHTML += output;
+                    }
+                    else if(arrayOne[i] == arrayOne.length){
+                        output = " | No account of that criteria has been found: <br>";
+                        document.getElementById("output").innerHTML += output;
+                    }
                 }
             }
         }
