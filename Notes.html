@@ -36,6 +36,10 @@
     <hr>
     <button onclick="dateStuff();">Date Stuff</button>
     <hr>
+    <img src="dog.avif" alt=" dog.avif image not found" width="200px" id="mydog">
+    <hr>
+    <button onclick="imageStuff();">Image Stuff</button>
+    <hr>
     <script type="text/javascript">
         let people = [];
         function variablesAndUserInputs(){
@@ -397,6 +401,10 @@
             // }
             // let dayBuild = dayName + " " + monthName + " " + year;
             // console.log(dayBuild);
+        }
+        function imageStuff(){
+            document.getElementById('mydog').src = "dog2.avif";
+            document.getElementById('mydog').style.width = "10%";
         }
     </script>
 </body>
