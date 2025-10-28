@@ -40,6 +40,12 @@
     <hr>
     <button onclick="imageStuff();">Image Stuff</button>
     <hr>
+    <form onsubmit="return false" id="imageForm">
+        <input type="radio" name="imageInput" value="1" id="1"><label for="1">Dog</label><br>
+        <input type="radio" name="imageInput" value="2" id="2"><label for="2">Cat</label><br>
+        <input type="radio" name="imageInput" value="3" id="3"><label for="3">Liger</label><br>
+        <button onclick="imageFunction();">Submit</button>
+    </form>
     <script type="text/javascript">
         let people = [];
         function variablesAndUserInputs(){
@@ -406,6 +412,16 @@
             document.getElementById('mydog').src = "dog2.avif";
             document.getElementById('mydog').style.width = "10%";
         }
-    </script>
+        function imageFunction(){
+            let inputs = document.getElementsByName("imageInput");
+            for(let i = 0; i < inputs.length; i++){
+                if(inputs[i].checked){
+                    if(inputs[i].value == 1){
+                        document.getElementById('mydog').src = "dog2.avif";
+                    }
+                }
+            }
+        }
+</script>
 </body>
 </html>
