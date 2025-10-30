@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Notes Page | 2025-2026 | NIC Coding 2</title>
+    <style>
+        #radioDiv {
+            /* text-align: center; */
+            margin-left: 45%;   
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     gabriel bouteiller
@@ -40,12 +49,14 @@
     <hr>
     <button onclick="imageStuff();">Image Stuff</button>
     <hr>
-    <form onsubmit="return false" id="imageForm">
-        <input type="radio" name="imageInput" value="1" id="1"><label for="1">Dog</label><br>
-        <input type="radio" name="imageInput" value="2" id="2"><label for="2">Cat</label><br>
-        <input type="radio" name="imageInput" value="3" id="3"><label for="3">Liger</label><br>
-        <button onclick="imageFunction();">Submit</button>
-    </form>
+    <div id="radioDiv">
+        <form onsubmit="return false" id="imageForm">
+            <input type="radio" name="imageInput" value="1" id="1"><label for="1">Dog</label><br>
+            <input type="radio" name="imageInput" value="2" id="2"><label for="2">Cat</label><br>
+            <input type="radio" name="imageInput" value="3" id="3"><label for="3">Liger</label><br>
+            <button onclick="imageFunction();">Submit</button>
+        </form>
+    </div>
     <script type="text/javascript">
         let people = [];
         function variablesAndUserInputs(){
