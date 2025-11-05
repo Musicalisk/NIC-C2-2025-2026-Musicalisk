@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NIC-C2-TL | Gabriel Bouteiller</title>
-    </script src="NIC-C2-TL-2">
-    </script src="NIC-C2-TL-3">
+    <script src="NIC-C2-TL-2.js"></script>
+    <link rel="stylesheet" href="NIC-C2-TL-3.css">
 </head>
-<body></body>
+<body>
+    <h1>Todo List Assignment</h1>
+    <h1 id="date"></h1>
+    <div id="container">
+        <div id="form">
+            <h2>Enter an Item to add to your todo list!</h2>
+            <br>
+            <form onsubmit="return false" id="inputform">
+                <input type="text" placeholder="Enter Item" id="inputone">
+                <br><br>
+                <button onclick="buttonOne();">Add Item</button>
+            </form>
+        </div>
+        <div id="list">
+            <h2>Todo:</h2>
+            <div id="outputone">List div</div>
+        </div>
+    </div>
+</body>
 </html>
