@@ -22,6 +22,37 @@ function buttonOne(){
         inputOne = first + last;
         itemArray.push(inputOne);
         document.getElementById("inputform").reset();
+        makeList();
         alert('02');
    }
+}
+function makeList(){
+    document.getElementById("outputone").innerHTML ='';
+    for(i = 0; i < itemArray.length; i++){
+        let checkBox = document.createElement('input');
+        checkBox.type = "checkbox";
+        checkBox.id = "num" + i;
+        checkBox.name = "listItem";
+        checkBox.value = itemArray[i];
+        let label = document.createElement('label');
+        label.htmlFor = "num" + i;
+        let labelText = document.createTextNode('   ' + itemArray[i]);
+        label.style.fontSize = '20px';
+        label.appendChild(labelText);
+        let newLine = document.createElement('br');
+        var divList = document.getElementById("outputone");
+        divList.appendChild(checkBox);
+        divList.appendChild(label);
+        divList.appendChild(newLine);
+    }
+    let buttonTwo = document.createElement('button');
+    buttonTwo.innerHTML = "Remove Checked";
+    buttonTwo.style.fontSize = '25px';
+    buttonTwo.style.textAlign = 'center';
+    buttonTwo.addEventListener('click', removeChecked);
+    divList.appendChild(document.createElement('br'));
+    divList.appendChild(buttonTwo);
+}
+function removeChecked(){
+
 }

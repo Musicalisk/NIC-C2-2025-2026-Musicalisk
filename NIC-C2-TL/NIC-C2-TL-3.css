@@ -9,13 +9,11 @@ h1 {
 }
 #form {
     width: 50%;
-    height: 200px;
     float: left;
     text-align: center;
 }
 #list {
     width: 50%;
-    height: 200px;
     float: right;
 }
 input {
@@ -27,4 +25,7 @@ button {
 }
 h2 {
     text-align: center;
+}
+#outputone {
+    margin: 35%;
 }
