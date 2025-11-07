@@ -54,5 +54,16 @@ function makeList(){
     divList.appendChild(buttonTwo);
 }
 function removeChecked(){
-
+    let items = document.getElementsByName('listItem');
+    let selectedItems = [];
+    for(i = 0; i < items.length; i++){
+        if(items[i].checked){
+            selectedItems.push(items[i].value);
+        }
+    }
+    for(let item of selectedItems){
+        let index = itemArray.indexOf(item);
+        itemArray.splice(index, 1);
+    }
+    makeList();
 }

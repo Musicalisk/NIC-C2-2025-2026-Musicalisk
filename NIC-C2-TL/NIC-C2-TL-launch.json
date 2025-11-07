@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open NIC-C2-TL-index.html",
+            "file": "c:\\Users\\s979523\\Documents\\NIC-C2-2025-2026-Musicalisk\\NIC-C2-TL\\NIC-C2-TL-index.html"
+        }
+    ]
+}
