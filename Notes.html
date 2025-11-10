@@ -10,6 +10,10 @@
             margin-left: 45%;}
         h1 {
             text-align: center;}
+        #dropDownDiv{
+            margin-left: 45%;}
+        #checkBoxDiv{
+            margin-left: 45%;}
     </style>
 </head>
 <body>
@@ -53,6 +57,30 @@
             <input type="radio" name="imageInput" value="2" id="2"><label for="2">Cat</label><br>
             <input type="radio" name="imageInput" value="3" id="3"><label for="3">Liger</label><br>
             <button onclick="imageFunction();">Submit</button>
+        </form>
+    </div>
+    <div id="checkBoxDiv">
+        <form onsubmit="return false" id="drinkform">
+            <input type="checkbox" name="drink" id="drink" value="coke">
+            <label for="coke">Coke</label>
+            <input type="checkbox" name="drink" id="drink" value="sprite">
+            <label for="sprite">Sprite</label>
+            <input type="checkbox" name="drink" id="drink" value="drP">
+            <label for="drP">Dr. Pepper</label>
+            <br>
+            <button onclick="chooseDrink();">Submit Drinks</button>
+        </form>
+    </div>
+    <div id="dropDownDiv">
+        <form onsubmit="return false" id="carform">
+            <select name="cars" id="carID">
+                <option disabled selected hidden>Pick Make of Car:</option>
+                <option value="toyota">Toyota</option>
+                <option value="ford">Ford</option>
+                <option value="honda">Honda</option>
+            </select>
+            <br>
+            <button onclick="carDrop();">Submit Car</button>
         </form>
     </div>
     <script type="text/javascript">
@@ -431,6 +459,22 @@
                 }
             }
         }
-</script>
+        function chooseDrink(){
+            let drinks = [];
+            let inputDrinks = document.getElementsByName('drink');
+            for(i = 0; i < inputDrinks.length; i++){
+                if(inputDrinks[i].checked){
+                    drinks.push(inputDrinks[i].value);
+                }
+            }
+            console.log(drinks);
+            document.getElementById("drinkform").reset();
+        }
+        function carDrop(){
+            let car = document.getElementById('carID').value;
+            console.log(car);
+            document.getElementById('carform').reset();
+        }
+    </script>
 </body>
 </html>
