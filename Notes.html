@@ -327,6 +327,16 @@
                     this.personAge++;
                 }
             }
+            class Student extends Person{
+                constructor(name, age, gpa){
+                    super(name, age);
+                    this.gpa = gpa;
+                }
+            }
+            let sutdent = new Student(name, age, 4.0);
+            console.log(sutdent);
+            sutdent.happyBirthday();
+            console.log(sutdent);
             let person = new Person(name, age);
             people.push(person);
             document.getElementById("nameForm").reset();
@@ -475,6 +485,11 @@
             console.log(car);
             document.getElementById('carform').reset();
         }
+        // Person.prototype.height = 6;   
+        // student.height = 7;
+        // 
+        // //
+
     </script>
 </body>
 </html>
