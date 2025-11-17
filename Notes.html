@@ -320,13 +320,14 @@
                     this.personName = name;
                     this.personAge = age;
                 }
-                printPerson(){
-                    console.log(this.personName + " is " + this.personAge + " years old!");
-                }
+                // printPerson(){
+                //     console.log(this.personName + " is " + this.personAge + " years old!");
+                // }
                 happyBirthday(){
                     this.personAge++;
                 }
             }
+            Person.prototype.printPerson = function (){console.log(this.personName + " is " + this.personAge + " years old!");}
             Person.prototype.height = 6;   
             class Student extends Person{
                 constructor(name, age, gpa){
